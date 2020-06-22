@@ -3,6 +3,7 @@
     .module("lunchCheker", [])
     .controller("lunchCheckContoller", lunchCheckContoller);
 
+  lunchCheckContoller.$inject = ["$scope"];
   function lunchCheckContoller($scope) {
     $scope.lunchItems = "";
     $scope.name = "pavan";
