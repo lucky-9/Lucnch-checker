@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="lunchCheker">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lunch Checker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Lunch Checker</h1>
+    <h1 style="text-align: center;" class="text-primary">Lunch Checker</h1>
+    <div ng-controller="lunchCheckContoller">
+       <div class="container">
+        <div class="form-group">
+            <input id="lunch-menu" type="text"
+            placeholder="list comma separated dishes you usually have for lunch"
+            class="form-control {{borderStyle}}"
+            ng-model = "lunchItems"
+            ng-change = "onLunchItemsChange()">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="checkLunch()">Check If Too Much</button>
+        </div>
+        <div class="form-group message">
+          <!-- Your message can go here. -->
+          <p class="text-info">{{warning}}</p>
+          <p style="font-size: 1.5rem;" class="text-{{sign}}">{{message}}</p>
+        </div>
+       </div>
+  </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>

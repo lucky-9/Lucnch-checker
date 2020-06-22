@@ -1,0 +1,9 @@
+.success-border {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.danger-border {
+  border-color: red;
+  box-shadow: 0 0 0 0.2rem rgba(255, 6, 6, 0.25);
+}
